@@ -2,7 +2,9 @@
 
 import cv2
 import matplotlib.pyplot as plt
-from img_process import do_gray
+#from img_process import do_gray
+
+from git_submodule_test_2.img_process import *
 
 dir = "/media/atif/BE0E05910E0543BD/University of Bremen MSc/git_submodule/open_image/"
 path = dir+"photo.jpg"
