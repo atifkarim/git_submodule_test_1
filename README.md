@@ -66,7 +66,7 @@ git clone --recurse-submodules https://github.com/atifkarim/git_submodule_test_1
 *it is the url of the parent repo*
 
 **If any change is done in the submodule by you then how to add, commit, push from parent repo ??**
-<br/>(look here)[https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule]
+<br/>[look here](https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule)
 
 <br/>**It is a little bit problematic thing I guess**
 
