@@ -25,4 +25,25 @@ git submodule add --force https://github.com/atifkarim/git_submodule_test_2 git_
 
 The problem occurs MAYBE there is a .gitmodules file which is hidden. YOU have to delete this also. If you delete it then without using --force tag you can again add submodule
 
+# To add, commit, push any repo where you have just added a submodule but NO change in the SUBMODULE tehn do --
+git submodule update --init --recursive
+git add .
+git commit -m "commit message"
+git push origin master 
 
+# To clone a repository which has git submodule then do the following ---
+for example here parent repo is: https://github.com/atifkarim/git_submodule_test_1
+
+so, do git clone https://github.com/atifkarim/git_submodule_test_1.git
+But you will see that submodule folder git_submodule_test_2 is empty. So do the following --
+git submodule init
+git submodule update
+
+To overcome all of this hassle use --
+git clone --recurse-submodules https://github.com/atifkarim/git_submodule_test_1 (it is the url of the parent repo)
+
+# If any change is done in the submodule by you then how to add, commit, push from parent repo ??
+look here -- https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule
+
+# if a change in the submodule by it's owner is happened and you want to track then do --
+git submodule update --remote git_submodule_test_2
