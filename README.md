@@ -21,40 +21,58 @@ git submodule add https://github.com/atifkarim/git_submodule_test_2
 ```git submodule add https://github.com/atifkarim/git_submodule_test_2 git_submodule_test_2```
 
 
-<h4>If you want to delete the submodule and faced any problem like 'git_submodule_test_2' already exists in the index then follow</h4>
-[This link](https://stackoverflow.com/questions/12898278/issue-with-adding-common-code-as-git-submodule-already-exists-in-the-index)
+**If you want to delete the submodule and faced any problem like 'git_submodule_test_2' already exists in the index then follow** [personal blog 1](https://stackoverflow.com/questions/12898278/issue-with-adding-common-code-as-git-submodule-already-exists-in-the-index) 
 
-Here , I have written the steps: <br />
+**Here , I have written the steps:** <br />
 **issue:** Deleted submodule folder but then want to add again but showing error >>  ```'git_submodule_test_2' already exists in the index``` <br />
 **Then I have done:** <br /> 
 ```git ls-files --stage git_submodule_test_2``` *to check submodule* <br />
 ```git rm --cached git_submodule_test_2``` *to remove submodule* <br />
 ```git submodule add https://github.com/atifkarim/git_submodule_test_2 git_submodule_test_2``` *to add submodule* <br />
 
-<h4>But yes, there is some problem might be ocurred like while you want to add it can show error because your delete process was not OK. So use </h4>
-```git submodule add --force https://github.com/atifkarim/git_submodule_test_2 git_submodule_test_2``` *used --force tag* <br />
+**But yes, there is some problem might be ocurred like while you want to add it can show error because your delete process was not OK. So use--**
 
-<h4>The problem occurs MAYBE there is a .gitmodules file which is hidden. YOU have to delete this also. If you delete it then without using --force tag you can again add submodule</h4>
+```
+git submodule add --force https://github.com/atifkarim/git_submodule_test_2 git_submodule_test_2
+```
+*used --force tag* <br />
 
-<h4>To add, commit, push any repo where you have just added a submodule but NO change in the SUBMODULE then do</h4>
-```git submodule update --init --recursive```
-```git add .```
-```git commit -m "commit message"```
-```git push origin master```
+**The problem occurs MAYBE there is a .gitmodules file which is hidden. YOU have to delete this also. If you delete it then without using --force tag you can again add submodule**
 
-<h4>o clone a repository which has git submodule then do the following</h4>
+**To add, commit, push any repo where you have just added a submodule but NO change in the SUBMODULE then do**
+```
+git submodule update --init --recursive
+git add .
+git commit -m "commit message"
+git push origin master
+
+```
+
+**To clone a repository which has git submodule then do the following**
 For example here parent repo is: https://github.com/atifkarim/git_submodule_test_1, so, do <br />
-```git clone https://github.com/atifkarim/git_submodule_test_1.git``` <br />
+```
+git clone https://github.com/atifkarim/git_submodule_test_1.git
+```
 But you will see that submodule folder **git_submodule_test_2** is empty. So do the following <br/>
-```git submodule init```
-```git submodule update```
+```
+git submodule init
+git submodule update
+```
 
-<h4>To overcome all of this hassle with a single command use</h4>
-```git clone --recurse-submodules https://github.com/atifkarim/git_submodule_test_1``` *it is the url of the parent repo*
+**To overcome all of this hassle with a single command use**
+```
+git clone --recurse-submodules https://github.com/atifkarim/git_submodule_test_1
+``` 
+*it is the url of the parent repo*
 
-<h4>If any change is done in the submodule by you then how to add, commit, push from parent repo ??</h4>
-(look here)[https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule]
-**It is a little bit problematic thing I guess**
+**If any change is done in the submodule by you then how to add, commit, push from parent repo ??**
+<br/>(look here)[https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule]
 
-<h4>If a change in the submodule by it's owner is happened and you want to track then do</h4>
-```git submodule update --remote git_submodule_test_2```
+<br/>**It is a little bit problematic thing I guess**
+
+**If a change in the submodule by it's owner is happened and you want to track then do**
+```
+git submodule update --remote git_submodule_test_2
+
+```
+And then again add, commit, push it
