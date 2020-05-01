@@ -73,6 +73,11 @@ git clone --recurse-submodules https://github.com/atifkarim/git_submodule_test_1
 **If a change in the submodule by it's owner is happened and you want to track then do**
 ```
 git submodule update --remote git_submodule_test_2
+cd git_submodule_test_2
+git pull origin master
+cd ..
+git add .
+git commit -m "commit message"
+git push origin master
 
 ```
-And then again add, commit, push it
